@@ -1,33 +1,36 @@
-# Домашнее задание к занятию "9.4. Prometheus"
+# Домашнее задание к занятию "9.5. Prometheus Ч.2 - Неудахин Денис"
 
 ### Задание 1. 
 
-Установите Prometheus.
 
-*Приведите скриншот systemctl status prometheus, где будет написано prometheus.service - Prometheus Service Netology Lesson 9.4 - [Ваши ФИО]*
+Создайте файл с правилом оповещения, как в лекции, и добавьте его в конфиг Prometheus.
 
-<img src = "img/9.4-1.PNG" width = 100%>
+*Погасите node exporter, стоящий на мониторинге, и прикрепите скриншот раздела оповещений Prometheus, где оповещение будет в статусе Pending.*
+
+<img src = "img/9.5-1.PNG" width = 100%>
 
 ---
 
 ### Задание 2. 
 
-Установите Node Exporter.
+Установите Alertmanager и интегрируйте его с Prometheus.
 
-*Приведите скриншот systemctl status node-exporter, где будет написано node-exporter.service - Node Exporter Netology Lesson 9.4 - [Ваши ФИО]*
 
-<img src = "img/9.4-2.PNG" width = 100%>
+*Прикрепите скриншот Alerts из Prometheus, где правило оповещение будет в статусе Fireing, и скриншот из Alertmanager, где будет видно действующее правило оповещения.*
+
+<img src = "img/9.5-2-1.PNG" width = 100%>
+
+<img src = "img/9.5-2-2.PNG" width = 100%>
+
 
 ---
 
 ### Задание 3. 
 
-Подключите Node Exporter к серверу Prometheus.
+Активируйте экспортер метрик в Docker и подключите его к Prometheus.
 
-*Приложите скриншот конфига из интерфейса Prometheus вкладки Status > Configuration*
-*Приложите скриншот из интерфейса Prometheus вкладки Status > Targets, чтобы было видно минимум два эндпоинта*
 
-<img src = "img/9.4-3-1.PNG" width = 100%>
-<img src = "img/9.4-3-2.PNG" width = 100%>
+*Приложите скриншот браузера с открытым эндпоинтом, а также скриншот списка таргетов из интерфейса Prometheus.*
+
 
 ---
