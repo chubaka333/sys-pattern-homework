@@ -271,13 +271,77 @@ Director {
 Результат
 
 <img src = "img/10.4-2-1.PNG" width = 100%>
-
+<img src = "img/10.4-2-2.PNG" width = 100%>
 ---
 
 ### Задание 3.
 
 Установите программное обеспечении rsync. Настройте синхронизацию на двух нодах. Протестируйте работу сервиса.
 
+Node 1
+
+rsyncd.conf
+```
+pid file = /var/run/rsyncd.pid
+log file = /var/log/rsyncd.log
+transfer logging = true
+munge symlinks = yes
+[data]
+path = /root/
+uid = root
+read only = yes
+list = yes
+comment = Data backup Dir ][a][a][a
+auth users = backup
+secrets file = /etc/rsyncd.scrt
+[new]
+path = /etc/
+uid = root
+read only = yes
+list = yes
+comment = System fileset
+auth users = backup
+secrets file = /etc/rsyncd.scrt
+```
+
+rsyncd.scrt
+```
+backup:12345
+```
+
+Node 2
+
+backup-node1.sh
+```
+#!/bin/bash
+date
+# Папка, куда будем складывать архивы — ее либо сразу создать либо несоздавать а положить в уже су$
+syst_dir=/backup/
+# Имя сервера, который архивируем
+srv_name=nodeOne #из тестовой конфигурации
+# Адрес сервера, который архивируем
+srv_ip=192.168.0.105
+# Пользователь rsync на сервере, который архивируем
+srv_user=backup
+# Ресурс на сервере для бэкапа
+srv_dir=data
+echo "Start backup ${srv_name}"
+# Создаем папку для инкрементных бэкапов
+mkdir -p ${syst_dir}${srv_name}/increment/
+/usr/bin/rsync -avz --progress --delete --password-file=/etc/rsyncd.scrt ${srv_user}@${srv_ip}::${srv_dir} ${syst_dir}${srv_name}/current/ --backup --backup-dir=${syst_dir}${srv_name}/$
+/usr/bin/find ${syst_dir}${srv_name}/increment/ -maxdepth 1 -type d -mtime +30 -exec rm -rf {} \;
+date
+echo "Finish backup ${srv_name}"
+```
+
+rsyncd.scrt
+```
+12345
+```
+
+Вывод выполнения скрипта
+
+<img src = "img/10.4-3.PNG" width = 100%>
 
 
 ---
