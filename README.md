@@ -30,7 +30,7 @@ Weighted Round Robin – тот же Round Robin но усовершенство
 
 *Приведите скриншот systemctl status haproxy, где будет видно, что haproxy запущен.*
 
-<img src = "10.5-4.PNG" width = 100%>
+<img src = "img16.png" width = 100%>
 
 ---
 
