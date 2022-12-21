@@ -68,4 +68,6 @@ return 200 'nginx is configured correctly';
 }
 ```
 
+<img src = "img/10.5-5.PNG" width = 100%>
+
 ---
