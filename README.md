@@ -53,11 +53,17 @@ $ cat /etc/hosts
 
 *В качестве решения домашнего задания приложите скриншоты из веб-интерфейса с информацией о доступных нодах в кластере и включённой политикой.*
 
+<img src = "img/3-1.PNG" width = 100%>
+
+<img src = "img/3-2.PNG" width = 100%>
+
 Также приложите вывод команды с двух нод:
 
 ```shell script
 $ rabbitmqctl cluster_status
 ```
+
+<img src = "img/3-3.PNG" width = 100%>
 
 Для закрепления материала снова запустите скрипт producer.py и приложите скриншот выполнения команды на каждой из нод:
 
@@ -65,35 +71,10 @@ $ rabbitmqctl cluster_status
 $ rabbitmqadmin get queue='hello'
 ```
 
+<img src = "img/3-4.PNG" width = 100%>
+
 После чего попробуйте отключить одну из нод, желательно ту, к которой подключались из скрипта, затем поправьте параметры подключения в скрипте consumer.py на вторую ноду и запустите его.
 
 *Приложите скриншот результата работы второго скрипта.*
 
-Не получается создать кластер:
-Сообщение на slave ноде.
-```
-attempted to contact: [rabbit@app1]
-
-rabbit@app1:
-  * connected to epmd (port 4369) on app1
-  * epmd reports node 'rabbit' uses port 25672 for inter-node and CLI tool traffic
-  * TCP connection succeeded but Erlang distribution failed
-  * suggestion: check if the Erlang cookie identical for all server nodes and CLI tools
-  * suggestion: check if all server nodes and CLI tools use consistent hostnames when addressing each other
-  * suggestion: check if inter-node connections may be configured to use TLS. If so, all nodes and CLI tools must do that
-   * suggestion: see the CLI, clustering and networking guides on https://rabbitmq.com/documentation.html to learn more
-
-
-Current node details:
- * node name: 'rabbitmqcli-1257-rabbit@debstdclean2'
- * effective user's home directory: /var/lib/rabbitmq
- * Erlang cookie hash: YLuxUVo/+EN9FY5s6PXKOA==
-
-```
-
-файл .erlang.cookie
-<img src = "img/3.PNG" width = 100%>
-файл hosts
-<img src = "img/4.PNG" width = 100%>
-
-В документации написано, что нужно так же положить файл куки в домашнюю директорию что рута что юзера, что я и сделал но это ничего не изменило.
+<img src = "img/3-4.PNG" width = 100%>
