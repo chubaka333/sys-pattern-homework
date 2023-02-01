@@ -77,4 +77,4 @@ $ rabbitmqadmin get queue='hello'
 
 *Приложите скриншот результата работы второго скрипта.*
 
-<img src = "img/3-4.PNG" width = 100%>
+<img src = "img/3-5.PNG" width = 100%>
