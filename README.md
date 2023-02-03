@@ -31,8 +31,6 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 
 <img src = "img/1.PNG" width = 100%>
 
-<img src = "img/1-2.PNG" width = 100%>
-
 <img src = "img/1-3.PNG" width = 100%>
 
 <img src = "img/1-4.PNG" width = 100%>
