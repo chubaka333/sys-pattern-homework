@@ -33,6 +33,6 @@
 
 <img src = "img/2-2.PNG" width = 100%>
 
-<img src = "img/2-2.PNG" width = 100%>
+<img src = "img/2-3.PNG" width = 100%>
 
-<img src = "img/2-2.PNG" width = 100%>
+<img src = "img/2-4.PNG" width = 100%>
